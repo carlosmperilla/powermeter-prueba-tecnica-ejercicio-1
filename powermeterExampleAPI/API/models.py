@@ -23,33 +23,64 @@ class Medidor(models.Model):
 
     def __init__(self, *args, **kwargs) -> None:
         super(Medidor, self).__init__(*args, **kwargs)
-        self.consumos = [0]
+        self.consumos = [0] #Inicializamos los consumos por instancia.
 
     def actualizar_max_consumo(self, consumos_personalizados=None):
+        """
+            Calcula el valor maximo entre los consumos.
+            Actualiza el valor de la instacia.
+            Admite consumos personalizados.
+        """
+
         if consumos_personalizados:
             self.max_consumo = max(consumos_personalizados)
         else:
             self.max_consumo = max(self.consumos)
 
     def actualizar_min_consumo(self, consumos_personalizados=None):
+        """
+            Calcula el valor minimo entre los consumos.
+            Actualiza el valor de la instacia.
+            Admite consumos personalizados.
+        """
+
         if consumos_personalizados:
             self.min_consumo = min(consumos_personalizados)
         else:
             self.min_consumo = min(self.consumos)
 
     def actualizar_total_consumo(self, consumos_personalizados=None):
+        """
+            Calcula la suma de los consumos.
+            Actualiza el valor de la instacia.
+            Admite consumos personalizados.
+        """
+
         if consumos_personalizados:
             self.total_consumo = sum(consumos_personalizados)
         else:
             self.total_consumo = sum(self.consumos)
     
     def actualizar_media_consumo(self, consumos_personalizados=None):
+        """
+            Calcula el promedio o media aritmetica de los consumos.
+            Actualiza el valor de la instacia.
+            Admite consumos personalizados.
+        """
+
         if consumos_personalizados:
             self.media_consumo = mean(consumos_personalizados)
         else:
             self.media_consumo = mean(self.consumos)
 
     def actualizar_data(self):
+        """
+            Obtiene los consumos, de las mediciones del medidor.
+            Actualiza consumos de la instancia.
+            Actualiza el maximo, el minimo, el total y la media,
+            de la instancia.
+        """
+        
         self.consumos = self.mediciones.values_list('consumo', flat=True)
         self.actualizar_max_consumo()
         self.actualizar_min_consumo()
