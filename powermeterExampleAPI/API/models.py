@@ -16,7 +16,7 @@ class Medidor(models.Model):
     class Meta:
         verbose_name = "Medidor"
         verbose_name_plural = "Medidores"
-        ordering = ['nombre']
+        ordering = ['nombre', 'llave']
 
     def __str__(self):
         return self.nombre + ' - ' + self.llave
