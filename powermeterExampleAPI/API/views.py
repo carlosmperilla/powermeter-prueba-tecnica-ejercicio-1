@@ -110,8 +110,6 @@ class MedidorViewSet(viewsets.ModelViewSet):
             Agrega una medición con su fecha y consumo.
         """
 
-        print(self.get_object())
-        print(request.data)
         current_object = self.get_object()
         
         if request.method == 'GET':
