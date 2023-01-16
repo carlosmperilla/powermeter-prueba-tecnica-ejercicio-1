@@ -12,7 +12,7 @@ router.register(r'Mediciones', MedicionViewSet)
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="Powermet API v1",
+      title="Powermeter API v1",
       default_version='v1',
       description="API v1, permite obtener y gestionar información de medidores.",
       terms_of_service="Indefinido",
