@@ -66,6 +66,11 @@ http://localhost:8000/api/swagger/
 ### ReDoc
 http://localhost:8000/api/redoc/
 
+## Superusuario para el administrador
+Por defecto uso en desarrollo:
+> Username: Carlos
+> Password: 12345
+
 ## Mejoras que realizaría
 - Implementar el sistema de testing de Django, para asegurarse del buen funcionamiento de la API. Sobre todo cuando se creen nuevas acciones.
 - Implementar acciones PUT, PATCH y DELETE.
